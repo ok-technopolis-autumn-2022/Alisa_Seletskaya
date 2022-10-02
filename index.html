@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>To do</title>
+</head>
+<body>
+<header>
+    <h1>todos</h1>
+</header>
+<nav>
+    <!-- class="deselectAllTodos" чтобы снять выделение -->
+    <button class="selectAllTodos">V</button>
+    <input type="text" name="newTodo" id="newTodo" placeholder="What needs to be done?">
+</nav>
+<section class="todoList">
+    <div class="todo" id="1">
+        <input type="checkbox" class="selectTodo" id="selectTodo1">
+        <label for="selectTodo1">HTML</label>
+        <!-- у класса deleteTodo в стилях прописать visibility в hover, чтобы кнопка отображалась только при наведении -->
+        <button class="deleteTodo">delete</button>
+    </div>
+    <div class="todo" id="2">
+        <input type="checkbox" class="selectTodo" id="selectTodo2" checked>
+        <!-- del тут для наглядности, вообще должно быть в стилях класса selectedTodo -->
+        <label for="selectTodo2" class="selectedTodo"><del>CSS</del></label>
+        <button class="deleteTodo">delete</button>
+    </div>
+    <div class="todo" id="3">
+        <input type="checkbox" class="selectTodo" id="selectTodo3">
+        <label for="selectTodo3">JS</label>
+        <button class="deleteTodo">delete</button>
+    </div>
+</section>
+<footer>
+    <p id="itemsLeft">2 items left</p>
+    <button id="allTodosBtn" class="activeBtn">All</button>
+    <button id="activeTodosBtn">Active</button>
+    <button id="completedTodosBtn">Completed</button>
+    <button id="clearCompletedBtn">Clear completed</button>
+</footer>
+</body>
+</html>
