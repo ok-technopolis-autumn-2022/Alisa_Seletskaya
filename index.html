@@ -1,43 +1,59 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <title>To do</title>
 </head>
 <body>
-<header>
-    <h1>todos</h1>
-</header>
-<nav>
-    <!-- class="deselectAllTodos" чтобы снять выделение -->
-    <button class="selectAllTodos">V</button>
-    <input type="text" name="newTodo" id="newTodo" placeholder="What needs to be done?">
-</nav>
-<section class="todoList">
-    <div class="todo" id="1">
-        <input type="checkbox" class="selectTodo" id="selectTodo1">
-        <label for="selectTodo1">HTML</label>
-        <!-- у класса deleteTodo в стилях прописать visibility в hover, чтобы кнопка отображалась только при наведении -->
-        <button class="deleteTodo">delete</button>
+    <div class="todo-app">
+        <header class="todo-app__header">
+            <h1>todos</h1>
+        </header>
+        <nav class="todo-app__controls">
+            <button class="todo-app__select-all">V</button>
+            <input type="text" name="new-task" placeholder="What needs to be done?">
+        </nav>
+        <section class="todo-app__tasks">
+            <ul class="todo-app__task-list tasks">
+                <li class="todo-app__task-item task-item">
+                    <div class="task-item__view">
+                        <input
+                                type="checkbox"
+                                class="task-item__status"
+                                aria-label="Completed task: HTML"
+                        />
+                        <span class="task-item__text">HTML</span>
+                        <button class="task-item__delete">Delete task</button>
+                    </div>
+                    <div class="task-item__edit" hidden="hidden">
+                        <input
+                                type="text"
+                                class="task-item__input"
+                                value="HTML"
+                                aria-label="Edit task: HTML"
+                        />
+                    </div>
+                </li>
+            </ul>
+        </section>
+        <footer class="todo-app__actions-bar">
+            <p class="todo-app__items-left">2 items left</p>
+            <div class="todo-app__items-filter">
+                <label for="all">
+                    <input type="radio" id="all" name="filter" value="all" checked>
+                    All
+                </label>
+                <label for="active">
+                    <input type="radio" id="active" name="filter" value="active">
+                    Active
+                </label>
+                <label for="completed">
+                    <input type="radio" id="completed" name="filter" value="completed">
+                    Completed
+                </label>
+            </div>
+            <button id="clearCompletedBtn">Clear completed</button>
+        </footer>
     </div>
-    <div class="todo" id="2">
-        <input type="checkbox" class="selectTodo" id="selectTodo2" checked>
-        <!-- del тут для наглядности, вообще должно быть в стилях класса selectedTodo -->
-        <label for="selectTodo2" class="selectedTodo"><del>CSS</del></label>
-        <button class="deleteTodo">delete</button>
-    </div>
-    <div class="todo" id="3">
-        <input type="checkbox" class="selectTodo" id="selectTodo3">
-        <label for="selectTodo3">JS</label>
-        <button class="deleteTodo">delete</button>
-    </div>
-</section>
-<footer>
-    <p id="itemsLeft">2 items left</p>
-    <button id="allTodosBtn" class="activeBtn">All</button>
-    <button id="activeTodosBtn">Active</button>
-    <button id="completedTodosBtn">Completed</button>
-    <button id="clearCompletedBtn">Clear completed</button>
-</footer>
 </body>
 </html>
