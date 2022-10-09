@@ -10,10 +10,15 @@
             <h1>todos</h1>
         </header>
         <nav class="todo-app__controls">
-            <button class="todo-app__select-all">V</button>
-            <input type="text" name="new-task" placeholder="What needs to be done?">
+            <button class="todo-app__select-all" aria-label="Select all tasks">V</button>
+            <input
+                    type="text"
+                    name="new-task"
+                    aria-label="Create new task"
+                    placeholder="What needs to be done?"
+            />
         </nav>
-        <section class="todo-app__tasks">
+        <section class="todo-app__tasks" aria-label="Task list">
             <ul class="todo-app__task-list tasks">
                 <li class="todo-app__task-item task-item">
                     <div class="task-item__view">
@@ -38,21 +43,40 @@
         </section>
         <footer class="todo-app__actions-bar">
             <p class="todo-app__items-left">2 items left</p>
-            <div class="todo-app__items-filter">
+            <div class="todo-app__items-filter" aria-label="Items filter">
                 <label for="all">
-                    <input type="radio" id="all" name="filter" value="all" checked>
+                    <input
+                            type="radio"
+                            id="all"
+                            name="filter"
+                            value="all"
+                            aria-label="Show all tasks"
+                            checked
+                    />
                     All
                 </label>
                 <label for="active">
-                    <input type="radio" id="active" name="filter" value="active">
+                    <input
+                            type="radio"
+                            id="active"
+                            name="filter"
+                            value="active"
+                            aria-label="Show active tasks"
+                    />
                     Active
                 </label>
                 <label for="completed">
-                    <input type="radio" id="completed" name="filter" value="completed">
+                    <input
+                            type="radio"
+                            id="completed"
+                            name="filter"
+                            value="completed"
+                            aria-label="Show completed tasks"
+                    />
                     Completed
                 </label>
             </div>
-            <button id="clearCompletedBtn">Clear completed</button>
+            <button id="clearCompletedBtn" aria-label="Clear completed tasks">Clear completed</button>
         </footer>
     </div>
 </body>
