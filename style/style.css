@@ -1,0 +1,253 @@
+body {
+    background-color: #f5f5f5;
+    font-family: 'Roboto', sans-serif;
+}
+
+.todo-app {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.todo-app__header h1 {
+    font-size: 100px;
+    font-weight: 100;
+    line-height: 21px;
+    letter-spacing: -2.5px;
+    color: #cccccc;
+}
+
+.todo-app__main {
+    width: 80%;
+    min-width: 400px;
+    max-width: 562px;
+    background: #ffffff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    position: relative;
+}
+
+.todo-app__main:before {
+    content: '';
+    position: absolute;
+    top: 100%;
+    height: 5px;
+    left: 2px;
+    right: 2px;
+    z-index: -1;
+    background-color: #FFFFFF;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.todo-app__main:after {
+    content: '';
+    position: absolute;
+    top: 100%;
+    height: 10px;
+    left: 4px;
+    right: 4px;
+    z-index: -2;
+    background-color: #FFFFFF;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.todo-app__controls {
+    height: 66px;
+    display: flex;
+    align-items: center;
+    padding-left: 15px;
+}
+
+.todo-app__controls button {
+    width: 28px;
+    height: 16px;
+    background-image: url("../img/SelectAll.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    background-color: transparent;
+    padding: 0;
+    border: none;
+}
+
+.todo-app__controls button:hover {
+    cursor: pointer;
+}
+
+.todo-app__controls input {
+    padding-left: 10px;
+    border: none;
+    font-family: 'Roboto', sans-serif;
+    font-size: 24px;
+    font-weight: 100;
+    line-height: 21px;
+    letter-spacing: -0.6px;
+    outline: none;
+}
+
+.todo-app__controls ::placeholder {
+    color: #cccccc;
+    font-style: italic;
+}
+
+.todo-app__tasks {
+    max-height: 400px;
+    overflow: hidden;
+    border-top: 1px solid #eeeeee;
+}
+
+ul {
+    list-style: none;
+    margin-top: 0;
+    padding: 0;
+}
+
+li {
+    height: 64px;
+    border-bottom: 1px solid #eeeeee;
+    display: flex;
+    align-items: center;
+}
+
+.todo-app__task-item {
+    display: flex;
+    align-items: center;
+}
+
+.task-item__view, .task-item__edit {
+    padding-right: 15px;
+    width: 100%;
+}
+
+.task-item__delete {
+    width: 20px;
+    height: 20px;
+    background-image: url("../img/Delete.svg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: transparent;
+    border: none;
+    margin-left: auto;
+    visibility: hidden;
+}
+
+.todo-app__task-item:hover {
+    background-color: #fafafa;
+}
+
+.todo-app__task-item:hover .task-item__delete {
+    visibility: visible;
+}
+
+.task-item__delete:focus {
+    visibility: visible;
+}
+
+.task-item__delete:hover {
+    cursor: pointer;
+}
+
+.todo-app__task-item input[type=checkbox] {
+    margin: 0 0 0 15px;
+    width: 30px;
+    height: 28px;
+    border: 1px solid #e6e6e6;
+    appearance: none;
+    border-radius: 50%;
+}
+
+.todo-app__task-item input[type=checkbox]:checked {
+    background-image: url(../img/Done.svg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    border: 1px solid #60c2b1;
+}
+
+.todo-app__task-item input[type=checkbox]:focus {
+    visibility: visible;
+}
+
+.todo-app__task-item input[type=checkbox]:checked~label .task-item__text {
+    text-decoration: line-through;
+    color: #cccccc;
+}
+
+.task-item__view {
+    display: flex;
+    align-items: center;
+}
+
+.task-item__text {
+    margin-left: 10px;
+    font-family: 'Roboto', sans-serif;
+    font-size: 24px;
+    font-weight: 300;
+    line-height: 21px;
+    letter-spacing: -0.6px;
+    color: #666666;
+    word-break: break-word;
+}
+
+label {
+    width: 100%;
+}
+
+label:hover {
+    cursor: pointer;
+}
+
+.todo-app__actions-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.todo-app__items-left, .todo-app__items-filter {
+    font-family: 'Roboto', sans-serif;
+    font-size: 14px;
+    font-weight: 300;
+    line-height: 21px;
+    letter-spacing: -0.35px;
+    color: #888888;
+}
+
+.todo-app__items-filter input:hover {
+    cursor: pointer;
+}
+
+.todo-app__items-filter input[type=radio] {
+    appearance: none;
+}
+
+.filter-text {
+    padding: 2px 5px;
+    border-radius: 5px;
+}
+
+.todo-app__items-filter input[type="radio"]:checked~.filter-text {
+    border: 1px solid #888888;
+}
+
+.todo-app__items-filter input[type="radio"]:focus~label .filter-text {
+    border: 1px solid #888888;
+}
+
+.todo-app__clear-completed {
+    border: none;
+    background-color: transparent;
+    font-family: 'Roboto', sans-serif;
+    font-size: 14px;
+    font-weight: 300;
+    line-height: 21px;
+    letter-spacing: -0.35px;
+    color: #888888;
+}
+
+.todo-app__clear-completed:hover {
+    cursor: pointer;
+}
+
+
